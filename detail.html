@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang='zh'>
+<head>
+  <title>matou.it - alpha</title>
+  <link rel="stylesheet" href="/static/css/bootstrap@2.0.4.css" type="text/css" media="screen" title="bootstrap@2.0.4" charset="utf-8">
+  <script type="text/javascript" charset="utf-8" src="/static/js/jquery@1.7.2.js"></script>
+  <script type="text/javascript" charset="utf-8" src="/static/js/bootstrap@2.0.4.js"></script>
+  <style type="text/css" media="screen">
+    html {
+      padding-top: 40px;
+    }
+    body {
+      background: -webkit-radial-gradient(61.8% 50%, circle cover, #B0D2ED, #4777B4 100%) fixed;
+    }
+    body > .container {
+      background: white;
+      border-radius: 0 0 5px 5px;
+      padding-bottom: 18px;
+    }
+    #project-info dt {
+      color: #999;
+    }
+    #project-info dd {
+      display: inline-block;
+    }
+    #project-info .btn {
+      margin-bottom: 9px;
+    }
+    #article-list {
+      list-style: none;
+      margin-left: 0;
+    }
+    #article-list li {
+      border-bottom: 1px dashed #ccc;
+      line-height: 22px;
+      margin-bottom: 3px;
+    }
+    img {
+      width: 100px; height: 100px;
+      float: left;
+    }
+    #screen-shot h3 {
+      padding-left: 10px;
+    }
+    #screen-shot-list {
+      list-style: none;
+      margin: 0;
+    }
+    #screen-shot img {
+      margin: 10px 5px 0 10px
+    }
+    #tag-list {
+      list-style: none;
+      margin-left: 10px;
+    }
+    #tag-list li {
+      margin: 5px;
+      float: left;
+    }
+    #introduction h3 {
+      padding-left: 10px;
+    }
+    #introduction p {
+      padding-left: 10px;
+      text-indent: 2em;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+          <ul class="nav">
+            <li class='brand'>Matou.it</li>
+          </ul>
+      </div>
+    </div>
+  </div>
+    <div class="container">
+        <div class="row" id="project-overview">
+          <div class="span3" id="project-logo">
+            logo here
+          </div>
+          <div class="span9" id="project-info">
+            <h1>Project Name</h1>
+            <div class="row">
+              <div class="span6">
+                <dl class="clearfix">
+                  <dt>官方网站：</dt>
+                  <dd>{{web_site}}</dd>
+                  <dt>作者：</dt>
+                  <dd>{{author1}}</dd>
+                  <dd>{{author2}}</dd>
+                  <dd>{{author3}}</dd>
+                  <dd>{{author4}}</dd>
+                </dl>
+                <h6>标签：</h6>
+                <ul id="tag-list">
+                  <li class="label label-info">标签1</li>
+                  <li class="label label-info">标签1</li>
+                  <li class="label label-info">标签1</li>
+                  <li class="label label-info">标签1</li>
+                  <li class="label label-info">标签1</li>
+                  <li class="label label-info">标签1</li>
+                </ul>
+              </div>
+              <div class="span2">
+                <a href="#" class="btn span1">Github</a>
+                <a href="#" class="btn span1">Demo</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="span8" id="introduction">
+            <h3>简介：</h3>
+            <p>在上一集J（威尔·史密斯 Will Smith 饰）重新召回K（汤米·李·琼斯 Tommy Lee Jones 饰）作为搭档之后，时间又过去了许多年，但是外星人对地球的觊觎却一直没有停歇。而且J还了解到了K已经死了四十多年。无论未来如何发展，K都和外星人入侵地球有着千丝万缕的联系。而且这段时间，J了解到是一个叫做鲍里斯（杰梅奈·克莱门特 Jemaine Clement 饰）的外星罪犯在1969年干掉了当时还没有太多经验的K（乔什·布洛林 Josh Brolin 饰）。而在四十多年后，这个鲍里斯就成为了地球最大的威胁。而为了阻止鲍里斯的计划，J只有穿越回1969年，去拯救年轻版的K。</p>
+          </div>
+          <div class="span4">
+            <h3>相关文章：</h3>
+            <ul id="article-list" class="clearfix">
+              <li><a href="#">Designed for everyone, everywhere.</a></li>
+              <li><a href="#">Designed for everyone, everywhere.</a></li>
+              <li><a href="#">Designed for everyone, everywhere.</a></li>
+              <li><a href="#">Designed for everyone, everywhere.</a></li>
+              <li><a href="#">Designed for everyone, everywhere.</a></li>
+            </ul>
+          </div>
+          <div class="span8" id="screen-shot">
+            <h3>截图：</h3>
+            <ul id="screen-shot-list" class="clearfix">
+                  <li>
+                  <a href="http://movie.douban.com/photos/photo/1496584372/"><img src="http://img1.douban.com/view/photo/albumicon/public/p1496584372.jpg" /></a>
+              </li>
+                  <li>
+                  <a href="http://movie.douban.com/photos/photo/1496579139/"><img src="http://img5.douban.com/view/photo/albumicon/public/p1496579139.jpg" /></a>
+              </li>
+                  <li>
+                  <a href="http://movie.douban.com/photos/photo/1561685756/"><img src="http://img3.douban.com/view/photo/albumicon/public/p1561685756.jpg" /></a>
+              </li>
+                  <li>
+                  <a href="http://movie.douban.com/photos/photo/1496599405/"><img src="http://img3.douban.com/view/photo/albumicon/public/p1496599405.jpg" /></a>
+              </li>
+                  <li class="last">
+                  <a href="http://movie.douban.com/photos/photo/1496586550/"><img src="http://img1.douban.com/view/photo/albumicon/public/p1496586550.jpg" /></a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+    </div>
+<body>
+</html>
