@@ -2,72 +2,11 @@
 <html lang='zh'>
 <head>
   <title>matou.it - alpha</title>
-  <link rel="stylesheet" href="/static/css/bootstrap@2.0.4.css" type="text/css" media="screen" title="bootstrap@2.0.4" charset="utf-8">
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="static/css/bootstrap@2.0.4.css" type="text/css">
+  <link rel="stylesheet" href="static/css/style.css" type="text/css">
   <script type="text/javascript" charset="utf-8" src="/static/js/jquery@1.7.2.js"></script>
   <script type="text/javascript" charset="utf-8" src="/static/js/bootstrap@2.0.4.js"></script>
-  <style type="text/css" media="screen">
-    html {
-      padding-top: 40px;
-    }
-    body {
-      background: -webkit-radial-gradient(61.8% 50%, circle cover, #B0D2ED, #4777B4 100%) fixed;
-    }
-    body > .container {
-      background: white;
-      border-radius: 0 0 5px 5px;
-      padding-bottom: 18px;
-    }
-    #project-info dt {
-      color: #999;
-    }
-    #project-info dd {
-      display: inline-block;
-    }
-    #project-info .btn {
-      margin-bottom: 9px;
-    }
-    #article-list {
-      list-style: none;
-      margin-left: 0;
-    }
-    #article-list li {
-      border-bottom: 1px dashed #ccc;
-      line-height: 22px;
-      margin-bottom: 3px;
-    }
-    img {
-      width: 100px; height: 100px;
-      float: left;
-    }
-    #screen-shot h3 {
-      padding-left: 10px;
-    }
-    #screen-shot-list {
-      list-style: none;
-      margin: 0;
-    }
-    #screen-shot img {
-      margin: 10px 5px 0 10px
-    }
-    #tag-list {
-      list-style: none;
-      margin-left: 10px;
-    }
-    #tag-list li {
-      margin: 5px;
-      float: left;
-    }
-    #introduction h3 {
-      padding-left: 10px;
-    }
-    #introduction p {
-      padding-left: 10px;
-      text-indent: 2em;
-    }
-    #add-btn {
-      margin-top: 10px;
-    }
-  </style>
 </head>
 <body>
   <div class="navbar navbar-fixed-top">
@@ -82,12 +21,63 @@
   <div class="container">
     <div class="row">
       <div class="span4" id="sidebar">
-        <a href="#" class="btn span2 btn-large" id="add-btn">添加项目</a>
-        <input type="text" name="tag" id="tag" placeholder="增加标签过滤">
+        <div class="well">
+          <a href="#" class="btn btn-large" id="add-btn">添加项目</a>
+        </div>
+        <div class="well" id="tag-filter">
+          <h3>标签云</h3>
+          <span class="label label-info"><a href="#">JavaScript</a></span>
+          <span class="label label-info"><a href="#">Python</a></span>
+          <span class="label label-info"><a href="#">ActionScript</a></span>
+          <span class="label label-info"><a href="#">Backbone</a></span>
+          <span class="label label-info"><a href="#">jQuery</a></span>
+          <span class="label label-info"><a href="#">WhatEver</a></span>
+          <span class="label label-info"><a href="#">AnyThing</a></span>
+          
+        </div>
       </div>
-      <div class="span8" id="project-list">
-        <ul>
-          <li><a href="#">hello</a></li>
+      <div class="span8">
+        <ul id="project-list">
+          <li class="clearfix">
+            <img src="static/img/test.png" alt="">
+            <h4><a href="#">Project Name 1</a></h4>
+            <p>dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao </p>
+            <ul class="tag-list">
+              <li><span class="label label-info">tag1</span></li>
+              <li><span class="label label-info">tag2</span></li>
+              <li><span class="label label-info">tag3</span></li>
+            </ul>
+          </li>
+          <li class="clearfix">
+            <img src="static/img/test.png" alt="">
+            <h4><a href="#">Project Name 1</a></h4>
+            <p>dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao </p>
+            <ul class="tag-list">
+              <li><span class="label label-info">tag1</span></li>
+              <li><span class="label label-info">tag2</span></li>
+              <li><span class="label label-info">tag3</span></li>
+            </ul>
+          </li>
+          <li class="clearfix">
+            <img src="static/img/test.png" alt="">
+            <h4><a href="#">Project Name 1</a></h4>
+            <p>dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao </p>
+            <ul class="tag-list">
+              <li><span class="label label-info">tag1</span></li>
+              <li><span class="label label-info">tag2</span></li>
+              <li><span class="label label-info">tag3</span></li>
+            </ul>
+          </li>
+          <li class="clearfix">
+            <img src="static/img/test.png" alt="">
+            <h4><a href="#">Project Name 1</a></h4>
+            <p>dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao dsfjoi asdjfo iasj dfoijas doifjao sid fjoi dsfjao </p>
+            <ul class="tag-list">
+              <li><span class="label label-info">tag1</span></li>
+              <li><span class="label label-info">tag2</span></li>
+              <li><span class="label label-info">tag3</span></li>
+            </ul>
+          </li>
         </ul>
       </div>
     </div>
