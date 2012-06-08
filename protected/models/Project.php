@@ -36,6 +36,12 @@ class Project extends CActiveRecord
 		return 'project';
 	}
 	
+	public function beforeSave() {
+		if ($this->isNewRecord)
+			$this->submitBy = Yii::app()->user->id;
+		return parent::beforeSave();
+	}
+	
 	public function getTagString()
 	{
 		$tags = array();
