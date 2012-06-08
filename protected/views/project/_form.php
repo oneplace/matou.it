@@ -11,7 +11,20 @@
 
 	<?php echo $form->textFieldRow($model,'url',array('class'=>'span5','maxlength'=>64)); ?>
 	
-	<?php echo $form->textAreaRow($model,'intro',array('class'=>'span7','rows'=>5)); ?>
+	<!-- <?php echo $form->textAreaRow($model,'intro',array('class'=>'span7','rows'=>5)); ?> -->
+	<?php echo $form->labelEx($model,'intro'); ?>
+		<?php
+		$this->widget('ext.cleditor.ECLEditor', array(
+		        'model'=>$model,
+		        'attribute'=>'intro', 
+		        'options'=>array(
+		            'width'=>535,
+		            'height'=>200,
+								'controls' => "bold italic underline strikethrough | bullets numbering | image | undo redo",
+		        ),
+		    ));
+		?>
+		<?php echo $form->error($model,'intro'); ?>
 	<label>项目标签</label>
 	<!-- <input name="project_tags" id="project-tags" value="foo,bar,baz" /> -->
 	<?php $this->widget('ext.STagsInput.STagsInput',array(
