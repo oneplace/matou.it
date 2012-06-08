@@ -5,14 +5,7 @@
 	  </div>
 	  <div class="well" id="tag-filter">
 	    <h3>标签云</h3>
-	    <span class="label label-info"><a href="#">JavaScript</a></span>
-	    <span class="label label-info"><a href="#">Python</a></span>
-	    <span class="label label-info"><a href="#">ActionScript</a></span>
-	    <span class="label label-info"><a href="#">Backbone</a></span>
-	    <span class="label label-info"><a href="#">jQuery</a></span>
-	    <span class="label label-info"><a href="#">WhatEver</a></span>
-	    <span class="label label-info"><a href="#">AnyThing</a></span>
-    
+	    <?php $this->widget('TagCloud') ?>
 	  </div>
 	</div>
 	<div class="span8">

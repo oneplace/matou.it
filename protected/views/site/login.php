@@ -1,6 +1,6 @@
 <div class="modal" id="login-panel">
   <div class="modal-header">
-    <h3>Admin Login</h3>
+    <h3>登录</h3>
   </div>
 <?php $form = $this->beginWidget('bootstrap.widgets.BootActiveForm',array(
 	'type'=>'horizontal',

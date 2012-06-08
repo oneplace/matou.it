@@ -47,14 +47,15 @@
 				'htmlOptions'=>array('class'=>'pull-right'),
 				'items'=>array(
 					'---',
-					array('label'=>Yii::app()->user->name, 'url'=>'#', 'items'=>array(
+					array('label'=>'登录','url'=>array('site/login'),'visible'=>Yii::app()->user->isGuest),
+					array('label'=>Yii::app()->user->name, 'visible'=>!Yii::app()->user->isGuest, 'items'=>array(
 						array('label'=>'设置', 'url'=>'#'),
 						'---',
 						array('label'=>'登出', 'url'=>array('site/logout')),
 					)),
 				),
 			),
-			'<form class="navbar-search pull-right" action=""><input type="text" class="search-query span3" placeholder="Search"></form>',
+			// '<form class="navbar-search pull-right" action=""><input type="text" class="search-query span3" placeholder="Search"></form>',
 		),
 	)); ?>
 
