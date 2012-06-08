@@ -55,6 +55,6 @@
 	<div class="container">
 	<?php echo $content ?>
 	</div> <!-- /container -->
-	<a id="feedback" class="btn btn-primary" href="http://ideaworks.cn/v/index.php?p=/categories/matou-it">开发建议</a>
+	<a id="feedback" target="_blank" class="btn btn-primary" href="http://ideaworks.cn/v/index.php?p=/categories/matou-it">开发建议</a>
   </body>
 </html>
