@@ -37,6 +37,7 @@
 				'items'=>array(
 					array('label'=>'Home', 'url'=>array('project/index')),
 					array('label'=>'项目管理', 'url'=>array('project/admin')),
+					array('label'=>'用户管理', 'url'=>array('user/index')),
 					array('label'=>'其他设置', 'url'=>'#', 'items'=>array(
 						array('label'=>'开源许可证', 'url'=>array('license/admin')),
 					)),
