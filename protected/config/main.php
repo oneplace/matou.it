@@ -17,7 +17,7 @@ return array(
 		'application.models.*',
 		'application.components.*',
 	),
-	
+	'defaultController'=>'project',
 	'language'=>'zh_CN',
 
 	'modules'=>array(
