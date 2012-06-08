@@ -101,3 +101,10 @@ dd img {
 .tag-list li {
   display: inline-block;
 }
+#feedback {
+	border-radius: 7px 0 0 7px;
+	width: 10px;
+	position: fixed;
+	right: 0;
+	top: 40%;
+}
