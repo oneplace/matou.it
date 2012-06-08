@@ -1,4 +1,4 @@
-<h2>Create User</h2>
+<h2>添加用户</h2>
 
 <?php
 $form = $this->beginWidget('bootstrap.widgets.BootActiveForm', array(

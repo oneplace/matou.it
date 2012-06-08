@@ -1,4 +1,4 @@
-<h2>User Details</h2>
+<h2>用户信息</h2>
 <?php
 $this->widget('ext.bootstrap.widgets.BootDetailView',array(
 	'data'=>$model,

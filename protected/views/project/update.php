@@ -6,10 +6,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Project','url'=>array('index')),
-	array('label'=>'Create Project','url'=>array('create')),
-	array('label'=>'View Project','url'=>array('view','id'=>$model->id)),
-	array('label'=>'Manage Project','url'=>array('admin')),
+	array('label'=>'项目列表','url'=>array('index')),
+	array('label'=>'提交新项目','url'=>array('create')),
+	array('label'=>'查看项目','url'=>array('view','id'=>$model->id)),
+	array('label'=>'管理项目','url'=>array('admin')),
 );
 ?>
 

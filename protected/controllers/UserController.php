@@ -5,8 +5,8 @@ class UserController extends Controller
 	public $layout='//layouts/column2';
 	
 	public $menu = array(
-		array('label'=>'List', 'url'=>array('user/index')),
-		array('label'=>'Create', 'url'=>array('user/create')),
+		array('label'=>'用户列表', 'url'=>array('user/index')),
+		array('label'=>'添加用户', 'url'=>array('user/create')),
 	);
 	
 	public function filters()

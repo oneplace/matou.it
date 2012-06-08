@@ -1,4 +1,4 @@
-<h2>all users</h2>
+<h2>所有用户</h2>
 
 <?php
 $this->widget('ext.bootstrap.widgets.BootGridView',array(

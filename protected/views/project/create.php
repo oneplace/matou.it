@@ -5,8 +5,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Project','url'=>array('index')),
-	array('label'=>'Manage Project','url'=>array('admin')),
+	array('label'=>'项目列表','url'=>array('index')),
+	array('label'=>'管理项目','url'=>array('admin')),
 );
 ?>
 

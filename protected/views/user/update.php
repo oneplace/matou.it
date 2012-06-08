@@ -1,4 +1,4 @@
-<h2>Change Password</h2>
+<h2>修改密码</h2>
 
 <?php
 $form = $this->beginWidget('bootstrap.widgets.BootActiveForm', array(
@@ -9,7 +9,7 @@ $form = $this->beginWidget('bootstrap.widgets.BootActiveForm', array(
 <?php echo $form->passwordFieldRow($model, 'oldPassword', array('class'=>'span3')); ?>
 <?php echo $form->passwordFieldRow($model, 'newPassword', array('class'=>'span3')); ?>
 <div class="form-actions">
-<?php echo CHtml::htmlButton('Submit', array('class'=>'btn btn-primary', 'type'=>'submit')); ?>
+<?php echo CHtml::htmlButton('确认', array('class'=>'btn btn-primary', 'type'=>'submit')); ?>
 </div>
  
 <?php $this->endWidget(); ?>
