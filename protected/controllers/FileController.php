@@ -34,7 +34,7 @@ class FileController extends CController
 			throw new CHttpException(400,'not a image file');
 		}
 		$thumb=Yii::app()->phpThumb->create($file->tempName);
-		$thumb->adaptiveResize(200,200);
+		$thumb->resize(200,200);
 		$newfilename = md5(time().mt_rand()).'.'.$file->extensionName;
 		if($thumb->save('./upload/logo/'.$newfilename)){
 			echo CHtml::image(Yii::app()->baseUrl.'/upload/logo/'.$newfilename)
