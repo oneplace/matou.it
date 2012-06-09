@@ -46,6 +46,7 @@ class Project extends CActiveRecord
 	public function setDefaultLogo()
 	{
 		if($this->logo) return;
+		$this->refresh();
 		$tags = $this->getTagStrings();
 		if(in_array('linux',$tags)){
 			$this->logo = 'linux.png';
