@@ -158,6 +158,7 @@ class ProjectController extends Controller
 		));
 		$this->render('tagged',array(
 			'dataProvider'=>$dataProvider,
+			'tag'=>$tag,
 		));
 	}
 

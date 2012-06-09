@@ -9,6 +9,7 @@
 	  </div>
 	</div>
 	<div class="span8">
+		<h3>标签：<?php echo $tag->name ?></h3>
 	  <ul id="project-list">
 		<?php foreach ($dataProvider->getData() as $projectTag): ?>
 			<?php $this->renderPartial('_item',array('project'=>$projectTag->project)) ?>
