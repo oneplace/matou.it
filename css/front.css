@@ -111,3 +111,7 @@ dd img {
 .cleditorMain {
 	margin-bottom:10px;
 }
+#login-panel {
+	position:static;
+	margin:100px auto;
+}
