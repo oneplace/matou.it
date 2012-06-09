@@ -20,6 +20,5 @@
 					'class'=>'pagination',
 				),
 		)) ?>
-		<?php print_r($dataProvider->pagination)?>
   </div>
 </div>
