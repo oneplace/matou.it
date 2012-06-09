@@ -60,22 +60,25 @@ class ProjectController extends Controller
 	public function actionCreate()
 	{
 		$model=new Project;
-
-		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
 		if(isset($_POST['Project']))
 		{
 			$model->attributes=$_POST['Project'];
 			if($model->save())
-				$tags = Yii::app()->request->getParam('project_tags');
-				if($tags) $model->attachTags($tags);
+				$this->attachTags($model);
+				$model->setDefaultLogo();
 				$this->redirect(array('view','id'=>$model->id));
 		}
 		Yii::app()->clientScript->registerScript('tagsInput','$("#project-tags").tagsInput({"height":"auto","width":"auto"});');
 		$this->render('create',array(
 			'model'=>$model,
 		));
+	}
+	
+	protected function attachTags($model)
+	{
+		$tags = Yii::app()->request->getParam('project_tags');
+		if($tags) $model->attachTags($tags);
 	}
 
 	/**
@@ -86,16 +89,13 @@ class ProjectController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
-		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
 		if(isset($_POST['Project']))
 		{
 			$model->attributes=$_POST['Project'];
 			if($model->save())
-				$tags = Yii::app()->request->getParam('project_tags');
-				if($tags) $model->attachTags($tags);
+				$this->attachTags($model);
+				$model->setDefaultLogo();
 				$this->redirect(array('view','id'=>$model->id));
 		}
 

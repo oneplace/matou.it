@@ -28,7 +28,7 @@
 	<label>项目标签</label>
 	<!-- <input name="project_tags" id="project-tags" value="foo,bar,baz" /> -->
 	<?php $this->widget('ext.STagsInput.STagsInput',array(
-		'value'=>$model->tagString,
+		'value'=>implode(',',$model->tagStrings),
 		'name'=>'project_tags',
 		'options'=>array(
 			'defaultText'=>'加标签',

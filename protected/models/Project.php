@@ -36,19 +36,32 @@ class Project extends CActiveRecord
 		return 'project';
 	}
 	
-	public function beforeSave() {
+	public function beforeSave()
+	{
 		if ($this->isNewRecord)
 			$this->submitBy = Yii::app()->user->id;
 		return parent::beforeSave();
 	}
 	
-	public function getTagString()
+	public function setDefaultLogo()
+	{
+		if($this->logo) return;
+		$tags = $this->getTagStrings();
+		if(in_array('linux',$tags)){
+			$this->logo = 'linux.png';
+		}else{
+			$this->logo = 'default.png';
+		}
+		$this->save();
+	}
+	
+	public function getTagStrings()
 	{
 		$tags = array();
 		foreach ($this->tags as $tag) {
 			$tags[]=$tag->name;
 		}
-		return implode(',',$tags);
+		return $tags;
 	}
 	
 	public function attachTags($tags)
