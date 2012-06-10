@@ -7,6 +7,8 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
+	<?php echo $form->textFieldRow($model,'repo',array('class'=>'span5','maxlength'=>128)); ?>
+
 	<?php echo $form->textFieldRow($model,'name',array('class'=>'span5','maxlength'=>128)); ?>
 
 	<?php echo $form->textFieldRow($model,'url',array('class'=>'span5','maxlength'=>64)); ?>
@@ -56,8 +58,6 @@
 	<?php echo $form->textFieldRow($model,'doc',array('class'=>'span5','maxlength'=>128)); ?>
 
 	<?php echo $form->textFieldRow($model,'demo',array('class'=>'span5','maxlength'=>128)); ?>
-
-	<?php echo $form->textFieldRow($model,'repo',array('class'=>'span5','maxlength'=>128)); ?>
 
 	<?php echo $form->textFieldRow($model,'author',array('class'=>'span5','maxlength'=>64)); ?>
 	

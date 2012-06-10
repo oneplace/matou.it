@@ -31,7 +31,7 @@ class ProjectController extends Controller
 			// 	'users'=>array('*'),
 			// ),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','admin','delete','index','view','tagged'),
+				'actions'=>array('create','update','admin','delete','index','view','tagged','repo'),
 				'users'=>array('@'),
 			),
 			array('deny',  // deny all users
@@ -69,11 +69,24 @@ class ProjectController extends Controller
 				$model->setDefaultLogo();
 				$this->redirect(array('view','id'=>$model->id));
 		}
-		Yii::app()->clientScript->registerScript('tagsInput','$("#project-tags").tagsInput({"height":"auto","width":"auto"});');
+		Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/init-repo-info.js',CClientScript::POS_END);
+		Yii::app()->clientScript->registerScript('tagsInput',
+			'$("#project-tags").tagsInput({"height":"auto","width":"auto"});');
 		$this->render('create',array(
 			'model'=>$model,
 		));
 	}
+	
+	public function actionRepo()
+	{
+		$repo = Yii::app()->request->getParam('repo');
+		if(!$repo) throw new CHttpException(400,'no repo parameter');;
+		//echo file_get_contents('https://api.github.com/repos/coreyti/showdown');
+		$urlInfo = parse_url($repo);
+		if(isset($urlInfo['host'])&&$urlInfo['host']=='github.com'){
+			echo file_get_contents('https://api.github.com/repos'.$urlInfo['path']);
+		}
+	} 
 	
 	protected function attachTags($model)
 	{

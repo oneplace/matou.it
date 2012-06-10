@@ -120,8 +120,8 @@ class Project extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, url, demo,intro', 'required'),
-			array('logo,doc,repo,licenseID,author','safe'),
+			array('name, url,intro', 'required'),
+			array('logo,doc,repo,licenseID,author,demo','safe'),
 			array('licenseID, create_time, update_time', 'numerical', 'integerOnly'=>true),
 			array('name, logo, doc, demo, repo', 'length', 'max'=>128),
 			array('url, author', 'length', 'max'=>64),
@@ -156,7 +156,7 @@ class Project extends CActiveRecord
 			'logo' => 'Logo',
 			'doc' => '文档地址',
 			'demo' => '示例',
-			'repo' => 'Repo',
+			'repo' => 'Repo (github或者其他)',
 			'author' => '作者',
 			'licenseID' => '开源许可证',
 			'create_time' => '收录时间',
