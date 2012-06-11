@@ -11,11 +11,19 @@ body > .container {
   margin-bottom: 40px;
 }
 #project-info dt {
+	float:left;
   color: #999;
+	width:70px;
+	text-align:right;
 }
 #project-info dd {
-  display: inline-block;
+  overflow:hidden;
 }
+#project-info h4 {
+	font-size:13px;
+	float:left;
+}
+
 #project-info .btn {
   margin-bottom: 9px;
 }
@@ -45,10 +53,11 @@ dd img {
 }
 #tag-list {
   list-style: none;
+	margin:0;
   margin-left: 10px;
 }
 #tag-list li {
-  margin: 5px;
+  margin: 0 5px;
   float: left;
 }
 #introduction h3 {

@@ -14,8 +14,20 @@
 							<dt>作者：</dt>
 	            <dd><?php echo $project->author ?></dd>
 							<?php endif ?>
+							<?php if ($project->repo): ?>
+							<dt>repo：</dt>
+	            <dd><?php echo CHtml::link($project->repo,$project->repo) ?></dd>
+							<?php endif ?>
+							<?php if ($project->doc): ?>
+							<dt>文档：</dt>
+	            <dd><?php echo CHtml::link($project->doc,$project->doc) ?></dd>
+							<?php endif ?>
+							<?php if ($project->demo): ?>
+							<dt>示例：</dt>
+	            <dd><?php echo CHtml::link($project->demo,$project->demo) ?></dd>
+							<?php endif ?>
             </dl>
-            <h6>标签：</h6>
+            <h4>标签：</h4>
             <ul id="tag-list">
 							<?php foreach ($project->tags as $tag): ?>
 							<li><?php echo CHtml::link($tag->name,array('project/tagged','tag'=>$tag->name),array('class'=>'label label-info')) ?></li>	
