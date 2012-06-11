@@ -37,11 +37,14 @@
 		),
 	)) ?>
 	<?php echo $form->labelEx($model,'logo'); ?>
-	<?php
+	<div class="input-append">
+		<input class="span5" size="2566" name="logo_url" id="logo_url" type="text"><button id="btn_remote_logo" class="btn" type="button">复制网络图片</button>
+	</div>
+	&nbsp;&nbsp;或者<?php
 	$this->widget('ext.suploadify.SUploadify',array(
 		'uploader'=>$this->createUrl('/file/logo'),
 		'options'=>array(
-			'buttonText'=>$model->logo?'更换logo':'上传logo',
+			'buttonText'=>'从本地上传',
 			'height'=>16,
 			'width'=>80,
 			'onUploadSuccess'=>'js:function(file, data, response){$("#logo-container").html(data);}',

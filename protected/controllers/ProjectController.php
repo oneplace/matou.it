@@ -31,7 +31,7 @@ class ProjectController extends Controller
 			// 	'users'=>array('*'),
 			// ),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','admin','delete','index','view','tagged','repo'),
+				'actions'=>array('create','update','admin','delete','index','view','tagged','repo','remotelogo'),
 				'users'=>array('@'),
 			),
 			array('deny',  // deny all users
@@ -70,6 +70,7 @@ class ProjectController extends Controller
 				$this->redirect(array('view','id'=>$model->id));
 		}
 		Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/create_project.js',CClientScript::POS_END);
+		Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/remote_logo.js',CClientScript::POS_END);
 		Yii::app()->clientScript->registerScript('tagsInput',
 			'$("#project-tags").tagsInput({"height":"auto","width":"auto"});');
 		$this->render('create',array(
@@ -80,13 +81,29 @@ class ProjectController extends Controller
 	public function actionRepo()
 	{
 		$repo = Yii::app()->request->getParam('repo');
-		if(!$repo) throw new CHttpException(400,'no repo parameter');;
+		if(!$repo) throw new CHttpException(400,'no repo parameter');
 		//echo file_get_contents('https://api.github.com/repos/coreyti/showdown');
 		$urlInfo = parse_url($repo);
 		if(isset($urlInfo['host'])&&$urlInfo['host']=='github.com'){
 			echo file_get_contents('https://api.github.com/repos'.$urlInfo['path']);
 		}
 	} 
+	
+	public function actionRemotelogo()
+	{
+		$logoUrl = Yii::app()->request->getParam('logo');
+		if(!$logoUrl) throw new CHttpException(400,'no logo parameter');
+		if(!Utils::remoteFileExists($logoUrl)) throw new CHttpException(404,'remote logo not found');
+		$thumb=Yii::app()->phpThumb->create($logoUrl);
+		$thumb->resize(200,200);
+		$newfilename = md5(time().mt_rand()).'.png';
+		if($thumb->save('./upload/logo/'.$newfilename)){
+			echo CHtml::image(Yii::app()->baseUrl.'/upload/logo/'.$newfilename)
+				.CHtml::hiddenField('Project[logo]',$newfilename);
+		}else{
+			throw new CHttpException(400,'upload failed');
+		}
+	}
 	
 	protected function attachTags($model)
 	{
@@ -111,7 +128,7 @@ class ProjectController extends Controller
 				$model->setDefaultLogo();
 				$this->redirect(array('view','id'=>$model->id));
 		}
-
+		Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/remote_logo.js',CClientScript::POS_END);
 		$this->render('update',array(
 			'model'=>$model,
 		));

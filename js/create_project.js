@@ -2,7 +2,7 @@ $(function(){
 	$('#Project_repo').blur(function(){
 		var repo = $(this).val();
 		if(!repo) return;
-		$.getJSON('repo',{repo:repo},function(repo){
+		$.getJSON(baseUrl+'/project/repo',{repo:repo},function(repo){
 			if(!repo)return;
 			$('#Project_name').val(repo.name);
 			$('#Project_url').val(repo.homepage);

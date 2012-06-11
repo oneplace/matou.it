@@ -24,5 +24,6 @@ class Controller extends CController
 	public function init()
 	{
 		Yii::app()->clientScript->registerCssFile(Yii::app()->baseUrl.'/css/front.css');
+		Yii::app()->clientScript->registerScript('init','var baseUrl = "'.Yii::app()->createAbsoluteUrl('/').'";',CClientScript::POS_HEAD);
 	}
 }
