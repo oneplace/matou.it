@@ -22,7 +22,7 @@
 		        'options'=>array(
 		            'width'=>535,
 		            'height'=>200,
-								'controls' => "bold italic underline strikethrough | bullets numbering | image | undo redo",
+								'controls' => "bold italic underline strikethrough | bullets numbering | image link | pastetext source | undo redo | ",
 		        ),
 		    ));
 		?>
