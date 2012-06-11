@@ -69,7 +69,7 @@ class ProjectController extends Controller
 				$model->setDefaultLogo();
 				$this->redirect(array('view','id'=>$model->id));
 		}
-		Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/init-repo-info.js',CClientScript::POS_END);
+		Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/create_project.js',CClientScript::POS_END);
 		Yii::app()->clientScript->registerScript('tagsInput',
 			'$("#project-tags").tagsInput({"height":"auto","width":"auto"});');
 		$this->render('create',array(
