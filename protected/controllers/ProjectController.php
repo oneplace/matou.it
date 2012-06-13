@@ -26,10 +26,10 @@ class ProjectController extends Controller
 	public function accessRules()
 	{
 		return array(
-			// array('allow',  // allow all users to perform 'index' and 'view' actions
-			// 	'actions'=>array(),
-			// 	'users'=>array('*'),
-			// ),
+			array('allow',  // allow all users to perform 'index' and 'view' actions
+				'actions'=>array('apply'),
+				'users'=>array('*'),
+			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('create','update','admin','delete','index','view','tagged','repo','remotelogo'),
 				'users'=>array('@'),
@@ -52,6 +52,21 @@ class ProjectController extends Controller
 			'project'=>$this->loadModel($id),
 		));
 	}
+	
+	public function actionApply()
+	{
+		$model = new Project;
+		$model->attributes=$_POST;
+		if(!$model->save()){
+			header("HTTP/1.0 400 bad request");
+			echo json_encode($model->errors);
+			Yii::app()->end();
+		}
+		$tags = Yii::app()->request->getParam('tags');
+		if($tags) $model->attachTags($tags);
+		$model->setDefaultLogo();
+		echo 'created '.$model->id;
+	}
 
 	/**
 	 * Creates a new model.
@@ -64,6 +79,7 @@ class ProjectController extends Controller
 		if(isset($_POST['Project']))
 		{
 			$model->attributes=$_POST['Project'];
+			$model->status = 1;
 			if($model->save())
 				$this->attachTags($model);
 				$model->setDefaultLogo();
