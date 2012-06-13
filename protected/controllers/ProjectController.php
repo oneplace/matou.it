@@ -57,6 +57,10 @@ class ProjectController extends Controller
 	{
 		$model = new Project;
 		$model->attributes=$_POST;
+		if($model->logo){
+			$logo = $this->getRemoteLogo($model->logo);
+			$model->logo = $logo ? $logo : '';
+		}
 		if(!$model->save()){
 			header("HTTP/1.0 400 bad request");
 			echo json_encode($model->errors);
@@ -80,10 +84,11 @@ class ProjectController extends Controller
 		{
 			$model->attributes=$_POST['Project'];
 			$model->status = 1;
-			if($model->save())
+			if($model->save()){
 				$this->attachTags($model);
 				$model->setDefaultLogo();
 				$this->redirect(array('view','id'=>$model->id));
+			}
 		}
 		Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/create_project.js',CClientScript::POS_END);
 		Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/remote_logo.js',CClientScript::POS_END);
@@ -108,17 +113,25 @@ class ProjectController extends Controller
 	public function actionRemotelogo()
 	{
 		$logoUrl = Yii::app()->request->getParam('logo');
-		if(!$logoUrl) throw new CHttpException(400,'no logo parameter');
-		if(!Utils::remoteFileExists($logoUrl)) throw new CHttpException(404,'remote logo not found');
-		$thumb=Yii::app()->phpThumb->create($logoUrl);
-		$thumb->resize(200,200);
-		$newfilename = md5(time().mt_rand()).'.png';
-		if($thumb->save('./upload/logo/'.$newfilename)){
+		if(!$logoUrl) throw new CHttpException(400,'no logo parameter');		
+		if($newfilename = $this->getRemoteLogo($logoUrl)){
 			echo CHtml::image(Yii::app()->baseUrl.'/upload/logo/'.$newfilename)
 				.CHtml::hiddenField('Project[logo]',$newfilename);
 		}else{
 			throw new CHttpException(400,'upload failed');
 		}
+	}
+	
+	protected function getRemoteLogo($logoUrl)
+	{
+		if(!Utils::remoteFileExists($logoUrl)) return false;
+		$thumb=Yii::app()->phpThumb->create($logoUrl);
+		$thumb->resize(200,200);
+		$newfilename = md5(time().mt_rand()).'.png';
+		if($thumb->save('./upload/logo/'.$newfilename))
+			return $newfilename;
+		else
+			return false;
 	}
 	
 	protected function attachTags($model)

@@ -125,6 +125,8 @@ class Project extends CActiveRecord
 			array('licenseID, create_time, update_time', 'numerical', 'integerOnly'=>true),
 			array('name, logo, doc, demo, repo', 'length', 'max'=>128),
 			array('url, author', 'length', 'max'=>64),
+			array('url,doc,demo,repo','url'),
+			array('url,name,repo','unique'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, name, url, logo, doc, demo, repo, author, licenseID, create_time, update_time', 'safe', 'on'=>'search'),
@@ -189,6 +191,9 @@ class Project extends CActiveRecord
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+			'sort'=>array(
+				'defaultOrder'=>array('id'=>CSort::SORT_DESC),
+			),
 		));
 	}
 }
