@@ -2,7 +2,7 @@
 <html lang="zh">
   <head>
 	<meta charset="utf-8">
-	<title>码头 - 优秀代码的集散地</title>
+	<title>码头 - 开源代码的集散地</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
 	<meta name="author" content="">
@@ -15,7 +15,6 @@
 	<!-- Le fav and touch icons -->
 
   </head>
-
   <body>
 
 	<?php $this->widget('bootstrap.widgets.BootNavbar', array(

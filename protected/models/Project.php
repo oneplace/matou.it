@@ -121,7 +121,7 @@ class Project extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('name, url,intro', 'required'),
-			array('logo,doc,repo,licenseID,author,demo','safe'),
+			array('logo,doc,repo,licenseID,author,demo,description','safe'),
 			array('licenseID, create_time, update_time', 'numerical', 'integerOnly'=>true),
 			array('name, logo, doc, demo, repo', 'length', 'max'=>128),
 			array('url, author', 'length', 'max'=>64),

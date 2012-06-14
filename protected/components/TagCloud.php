@@ -4,7 +4,10 @@ class TagCloud extends CWidget
 {
 	public $tags;
 	public function init(){
-		$this->tags = Tag::model()->findAll();
+		$this->tags = Tag::model()->findAll(array(
+			'limit'=>100,
+			'order'=>'id desc',
+		));
 	}
 	
 	public function run()
