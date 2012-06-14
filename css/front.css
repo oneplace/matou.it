@@ -60,12 +60,8 @@ dd img {
   margin: 0 5px;
   float: left;
 }
-#introduction h3 {
-  padding-left: 10px;
-}
-#introduction p {
-  padding-left: 10px;
-  text-indent: 2em;
+#introduction-main {
+  padding: 10px;
 }
 #sidebar .well {
   margin: 10px 0 10px 10px;

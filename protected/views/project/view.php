@@ -50,7 +50,7 @@
     <div class="row">
       <div class="span8" id="introduction">
         <h3>简介：</h3>
-        <p><?php echo $project->intro ?></p>
+        <div id="introduction-main"><?php echo $project->intro ?></div>
       </div>
       <div class="span4">
         <h3>相关文章：</h3>
