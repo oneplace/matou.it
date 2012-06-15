@@ -210,7 +210,7 @@ class ProjectController extends Controller
 		if($tag===null) throw new CHttpException(404,'The requested page does not exist.');
 		$dataProvider=new CActiveDataProvider('ProjectTag',array(
 			'criteria'=>array(
-				'order'=>'t.id desc',
+				'order'=>'t.id asc',
 				'condition'=>'tagID=:tagID',
 				'params'=>array(':tagID'=>$tag->id),
 				'with'=>array('project'),
