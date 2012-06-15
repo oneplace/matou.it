@@ -192,6 +192,7 @@ class ProjectController extends Controller
 		Yii::app()->clientScript->registerCssFile(Yii::app()->baseUrl.'/css/front.css');
 		$dataProvider=new CActiveDataProvider('Project',array(
 			'criteria'=>array(
+				'condition'=>'status=1',
 				'order'=>'id desc',
 			),
 		));
