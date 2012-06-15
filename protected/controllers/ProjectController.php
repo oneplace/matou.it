@@ -27,11 +27,11 @@ class ProjectController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('apply'),
+				'actions'=>array('apply','index','view','tagged'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','admin','delete','index','view','tagged','repo','remotelogo'),
+				'actions'=>array('create','update','admin','delete','repo','remotelogo'),
 				'users'=>array('@'),
 			),
 			array('deny',  // deny all users
