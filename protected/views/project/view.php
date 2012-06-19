@@ -5,6 +5,7 @@
       </div>
       <div class="span9" id="project-info">
         <h1><?php echo $project->name ?></h1>
+				<span id="intro"><?php echo $project->intro ?></span>
         <div class="row">
           <div class="span6">
             <dl class="clearfix">
@@ -50,7 +51,7 @@
     <div class="row">
       <div class="span8" id="introduction">
         <h3>简介：</h3>
-        <div id="introduction-main"><?php echo $project->intro ?></div>
+        <div id="introduction-main"><?php echo $project->description ?></div>
       </div>
       <div class="span4">
         <h3>相关文章：</h3>

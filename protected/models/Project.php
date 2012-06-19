@@ -120,8 +120,8 @@ class Project extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, url,intro', 'required'),
-			array('logo,doc,repo,licenseID,author,demo,description','safe'),
+			array('name, url,description', 'required'),
+			array('logo,doc,repo,licenseID,author,demo,description,intro','safe'),
 			array('licenseID, create_time, update_time', 'numerical', 'integerOnly'=>true),
 			array('name, logo, doc, demo, repo', 'length', 'max'=>128),
 			array('url, author', 'length', 'max'=>64),
@@ -142,6 +142,7 @@ class Project extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'tags'=>array(self::MANY_MANY, 'Tag','project_tag(projectID,tagID)'),
+			'submitUser'=>array(self::BELONGS_TO,'User','submitBy'),
 		);
 	}
 
@@ -154,7 +155,8 @@ class Project extends CActiveRecord
 			'id' => 'ID',
 			'name' => '名称',
 			'url' => '项目地址',
-			'intro'=>'简介',
+			'intro'=>'一句话简介',
+			'description'=>'介绍',
 			'logo' => 'Logo',
 			'doc' => '文档地址',
 			'demo' => '示例',

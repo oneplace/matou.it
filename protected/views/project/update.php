@@ -13,6 +13,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Update Project <?php echo $model->id; ?></h1>
+编辑项目:<?php echo $model->id ?><h3><?php echo $model->name ?></h3>
 
 <?php echo $this->renderPartial('_form',array('model'=>$model)); ?>

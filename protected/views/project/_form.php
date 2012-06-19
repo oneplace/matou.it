@@ -13,12 +13,13 @@
 
 	<?php echo $form->textFieldRow($model,'url',array('class'=>'span5','maxlength'=>64)); ?>
 	
-	<!-- <?php echo $form->textAreaRow($model,'intro',array('class'=>'span7','rows'=>5)); ?> -->
-	<?php echo $form->labelEx($model,'intro'); ?>
+	<?php echo $form->textFieldRow($model,'intro',array('class'=>'span7','maxlength'=>256)); ?>
+	
+	<?php echo $form->labelEx($model,'description'); ?>
 		<?php
 		$this->widget('ext.cleditor.ECLEditor', array(
 		        'model'=>$model,
-		        'attribute'=>'intro', 
+		        'attribute'=>'description', 
 		        'options'=>array(
 		            'width'=>535,
 		            'height'=>200,
@@ -26,7 +27,7 @@
 		        ),
 		    ));
 		?>
-		<?php echo $form->error($model,'intro'); ?>
+		<?php echo $form->error($model,'description'); ?>
 	<label>项目标签</label>
 	<!-- <input name="project_tags" id="project-tags" value="foo,bar,baz" /> -->
 	<?php $this->widget('ext.STagsInput.STagsInput',array(
