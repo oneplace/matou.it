@@ -51,7 +51,7 @@ class ProjectController extends Controller
 		$project = $this->loadModel($id);
 		$this->pageTitle = $project->name;
 		$this->metaKeywords = $project->name;
-		$this->metaDescription = $project->name.' '.$project->intro.' '.mb_substr(strip_tags($project->description),0,120,'UTF-8');
+		$this->metaDescription = '项目名称:'.$project->name.'.介绍:'.$project->intro.'.'.mb_substr(strip_tags($project->description),0,120,'UTF-8');
 		$this->render('view',array(
 			'project'=>$project,
 		));
