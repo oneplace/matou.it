@@ -24,9 +24,11 @@ class MarkController extends CController
 				$this->redirect(array('success','id'=>$model->id));
 			}
 		}
-		
-		Scraper::doScrap($url,$model);
-		
+		$scraped = Scraper::doScrap($url,$model);
+		if(!$scraped) { 
+			echo 'sorry! this site is not supported.';
+			return;
+		}
 		$this->render('form',array(
 			'model'=>$model,
 		));
