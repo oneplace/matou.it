@@ -48,8 +48,12 @@ class ProjectController extends Controller
 	{
 		$this->layout = '/layouts/main';
 		Yii::app()->clientScript->registerCssFile(Yii::app()->baseUrl.'/css/front.css');
+		$project = $this->loadModel($id);
+		$this->pageTitle = $project->name;
+		$this->metaKeywords = $project->name;
+		$this->metaDescription = $project->name.' '.$project->intro.' '.mb_substr(strip_tags($project->description),0,120,'UTF-8');
 		$this->render('view',array(
-			'project'=>$this->loadModel($id),
+			'project'=>$project,
 		));
 	}
 	
@@ -90,7 +94,7 @@ class ProjectController extends Controller
 				$this->redirect(array('view','id'=>$model->id));
 			}
 		}
-		Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/create_project.js',CClientScript::POS_END);
+		Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/create_project.js?v0.1',CClientScript::POS_END);
 		Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/remote_logo.js',CClientScript::POS_END);
 		Yii::app()->clientScript->registerScript('tagsInput',
 			'$("#project-tags").tagsInput({"height":"auto","width":"auto"});');
@@ -98,17 +102,6 @@ class ProjectController extends Controller
 			'model'=>$model,
 		));
 	}
-	
-	public function actionRepo()
-	{
-		$repo = Yii::app()->request->getParam('repo');
-		if(!$repo) throw new CHttpException(400,'no repo parameter');
-		//echo file_get_contents('https://api.github.com/repos/coreyti/showdown');
-		$urlInfo = parse_url($repo);
-		if(isset($urlInfo['host'])&&$urlInfo['host']=='github.com'){
-			echo file_get_contents('https://api.github.com/repos'.$urlInfo['path']);
-		}
-	} 
 	
 	public function actionRemotelogo()
 	{

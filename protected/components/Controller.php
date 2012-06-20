@@ -21,6 +21,13 @@ class Controller extends CController
 	 */
 	public $breadcrumbs=array();
 	
+	public function behaviors()
+	{
+	    return array(
+	        'seo'=>array('class'=>'ext.seo.components.SeoControllerBehavior'),
+	    );
+	}
+	
 	public function init()
 	{
 		Yii::app()->clientScript->registerCssFile(Yii::app()->baseUrl.'/css/front.css');
