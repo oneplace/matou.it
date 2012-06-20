@@ -23,7 +23,7 @@
 	<?php $this->widget('bootstrap.widgets.BootNavbar', array(
 		// 'fixed'=>true,
 		'brand'=>Yii::app()->name,
-		'brandUrl'=>'#',
+		'brandUrl'=>Yii::app()->createAbsoluteUrl('/'),
 		'collapse'=>true, // requires bootstrap-responsive.css
 		'items'=>array(
 			array(
@@ -41,8 +41,9 @@
 				'class'=>'bootstrap.widgets.BootMenu',
 				'htmlOptions'=>array('class'=>'pull-right'),
 				'items'=>array(
-					'---',
 					array('label'=>'登录','url'=>array('site/login'),'visible'=>Yii::app()->user->isGuest),
+					array('label'=>'MarkTou↥','url'=>"javascript:(function(){h = 'http://matou.it/mark?';u = h + 'url=' + encodeURIComponent(window.location.href)+'&title=' + encodeURIComponent(document.title);window.open(u, 'MarkTou','location=yes,links=no,scrollbars=yes,toolbar=no,width=600,height=600')})();"),
+					'---',
 					array('label'=>Yii::app()->user->name, 'visible'=>!Yii::app()->user->isGuest, 'items'=>array(
 						array('label'=>'设置', 'url'=>'#'),
 						'---',
