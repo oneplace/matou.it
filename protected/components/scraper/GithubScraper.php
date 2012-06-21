@@ -19,7 +19,7 @@ class GithubScraper extends Scraper
 		$this->model->url = $info['homepage'];
 		$this->model->doc = $readme['_links']['html'];
 		$this->model->intro = $info['intro'];
-		$this->model->author = CHtml::link($info['owner']['login'],$info['owner']['url']);
+		$this->model->author = CHtml::link($info['owner']['login'],'https://github.com/'.$info['owner']['login']);
 		$this->model->preTags = array($info['language']);
 	}
 }
