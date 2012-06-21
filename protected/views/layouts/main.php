@@ -59,5 +59,9 @@
 	<?php echo $content ?>
 	</div> <!-- /container -->
 	<a id="feedback" target="_blank" class="btn btn-primary" href="http://ideaworks.cn/v/index.php?p=/categories/matou-it">开发建议</a>
-  </body>
+  <script type="text/javascript">
+	var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+	document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F222011d4714fade5e6ae34a6ea3c00ed' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+</body>
 </html>
