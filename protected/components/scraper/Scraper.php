@@ -23,6 +23,7 @@ Abstract class Scraper
 	public static $scrapers = array(
 		'code.google.com'=>'GoogleCode',
 		'github.com'=>'Github',
+		'www.oschina.net'=>'Oschina',
 	);
 	
 	public static function doScrap($url,$model)
