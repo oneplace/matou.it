@@ -4,8 +4,8 @@
       <?php echo CHtml::image(Yii::app()->baseUrl.'/upload/logo/'.$project->logo) ?>
       </div>
       <div class="span9" id="project-info">
-        <h1><?php echo $project->name ?></h1>
-				<span id="intro"><?php echo $project->intro ?></span>
+        <h1><?php echo CHtml::encode($project->name) ?></h1>
+				<span id="intro"><?php echo CHtml::encode($project->intro) ?></span>
         <div class="row">
           <div class="span6">
             <dl class="clearfix">

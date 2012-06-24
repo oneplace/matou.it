@@ -1,12 +1,12 @@
 <li class="clearfix">
 	<?php if ($project->logo == 'default.png'): ?>
-		<div class="default-logo"><?php echo $project->name ?></div>
+		<div class="default-logo"><?php echo CHtml::encode($project->name) ?></div>
 	<?php else: ?>
 		<?php echo CHtml::image(Yii::app()->baseUrl.'/upload/logo/'.$project->logo) ?>
 	<?php endif ?>
   <h4>
 		<?php echo CHtml::link($project->name,array('project/view','id'=>$project->id)) ?>
-		<span class="intro"><?php echo $project->intro ?></span>
+		<span class="intro"><?php echo CHtml::encode($project->intro) ?></span>
 	</h4>
   <p><?php echo mb_substr(strip_tags($project->description),0,200) ?></p>
   <ul class="tag-list">
