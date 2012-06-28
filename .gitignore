@@ -2,3 +2,4 @@
 /protected/runtime/
 config/main.php
 /upload/
+.DS_Store
